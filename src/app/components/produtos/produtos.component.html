@@ -1,0 +1,19 @@
+<div class="list-group-item" *ngFor="let produto of produtos">
+    <div class="row">
+        <div class="col-md-8">
+            <h5>{{ produto.nome }}</h5>
+        </div>
+        <div class="col-md-2 text-end">
+            <h5>{{ produto.preco | currency }}</h5>
+        </div>
+        <div class="col-md-2 text-end">
+            <button class="btn btn-outline-info btn-sm" (click)="adicionar(produto)">
+                <span class="fa fa-plus"></span>
+            </button>
+            <button class="btn btn-outline-info btn-sm" (click)="remover(produto.uuid)" style="margin-left: 5px;">
+                <span class="fa fa-minus"></span>
+            </button>
+        </div>
+    </div>
+</div>
+

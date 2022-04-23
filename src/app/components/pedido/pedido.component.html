@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-7">
+        <h4>Pedido</h4>
+    </div>
+    <div class="col-md-5 text-end">
+        R$ {{ pedido.total }}
+    </div>
+</div>
+<hr>
+<div class="row" *ngFor="let item of pedido.itens">
+    <div class="col-md-1">
+        {{ item.quantidade }}
+    </div>
+    <div class="col-md-7">
+        {{ item.produto.nome }}
+    </div>
+    <div class="col-md-4 text-end">
+        R$ {{ ( item.produto.preco * item.quantidade ) }}
+    </div>
+</div>
+<hr>
+<div>
+  <button class="btn btn-outline-info btn-sm" (click)="salvar(pedido)" style="margin-left: 5px;">
+    <span class="fa fa-check-square-o"></span>
+</button>
+</div>
